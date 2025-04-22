@@ -22,6 +22,6 @@ jobs:
 
       - name: Apply manifests
         run: |
-          kubectl apply -f config.yml --validate=false
+          kubectl apply -f config.yml --insecure-skip-tls-verify=true
           kubectl apply -f deploy.yml
           
