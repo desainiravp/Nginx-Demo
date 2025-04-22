@@ -22,6 +22,6 @@ jobs:
 
       - name: Apply manifests
         run: |
-          kubectl apply -f config.yaml
-          kubectl apply -f deploy.yaml
+          kubectl apply -f config.yml
+          kubectl apply -f deploy.yml
           
