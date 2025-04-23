@@ -1,10 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-hello-world
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: hello-nginx
 spec:
   replicas: 1
@@ -42,4 +38,5 @@ spec:
   - port: 80
     targetPort: 80
     nodePort: 30080
+
 
