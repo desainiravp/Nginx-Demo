@@ -1,27 +1,2 @@
-name: Deploy to K3s
 
-on:
-  push:
-    branches:
-      - master
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Set up kubectl
-        uses: azure/setup-kubectl@v3
-
-      - name: Set KUBECONFIG
-        run: |
-          mkdir -p ~/.kube
-          echo "${{ secrets.KUBECONFIG }}" > ~/.kube/config
-
-      - name: Apply manifests
-        run: |
-          kubectl apply -f config.yml --insecure-skip-tls-verify=true
-          kubectl apply -f deploy.yml
-          
